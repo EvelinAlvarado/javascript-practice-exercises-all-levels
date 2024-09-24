@@ -8,10 +8,12 @@ exports.spinWords = void 0;
 // "This is a test        --> "This is a test"
 // "This is another test" --> "This is rehtona test"
 function spinWords(words) {
-    const array = words
-        .split(" ")
-        .map((word) => word.length > 4 ? word.split("").reverse().join("") : word);
-    return array.join(" ");
+  const array = words
+    .split(" ")
+    .map((word) =>
+      word.length > 4 ? word.split("").reverse().join("") : word
+    );
+  return array.join(" ");
 }
 exports.spinWords = spinWords;
 console.log(spinWords("new house"));
