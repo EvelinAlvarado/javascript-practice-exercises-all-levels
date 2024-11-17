@@ -7,38 +7,38 @@ exports.Challenge2 = exports.Challenge = void 0;
 // Additionally, if the number is negative, return 0.
 // Note: If the number is a multiple of both 3 and 5, only count it once.
 class Challenge {
-  static solution(number) {
-    if (number > 0 && Number.isInteger(number)) {
-      const array = [];
-
-      for (let index = 0; index < number; index++) {
-        array.push(index);
-      }
-      const values = new Set();
-      array.forEach((element) => {
-        if (element % 3 === 0 || element % 5 === 0) {
-          values.add(element);
+    static solution(number) {
+        if (number > 0 && Number.isInteger(number)) {
+            const array = [];
+            for (let index = 0; index < number; index++) {
+                array.push(index);
+            }
+            const values = new Set();
+            array.forEach((element) => {
+                if (element % 3 === 0 || element % 5 === 0) {
+                    values.add(element);
+                }
+            });
+            const sum = Array.from(values).reduce((total, currentNumber) => {
+                return total + currentNumber;
+            }, 0);
+            return sum;
         }
-      });
-      const sum = Array.from(values).reduce((total, currentNumber) => {
-        return total + currentNumber;
-      }, 0);
-      return sum;
-    } else {
-      return 0;
+        else {
+            return 0;
+        }
     }
-  }
 }
 exports.Challenge = Challenge;
 console.log(Challenge.solution(10));
 //Solution 2
 class Challenge2 {
-  static solution(num) {
-    let total = 0;
-    for (let i = 0; i < num; i++) {
-      total += i % 5 == 0 || i % 3 == 0 ? i : 0;
+    static solution(num) {
+        let total = 0;
+        for (let i = 0; i < num; i++) {
+            total += i % 5 == 0 || i % 3 == 0 ? i : 0;
+        }
+        return total;
     }
-    return total;
-  }
 }
 exports.Challenge2 = Challenge2;
