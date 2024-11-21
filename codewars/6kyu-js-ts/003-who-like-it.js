@@ -1,7 +1,4 @@
-"use strict";
 //TODO Who likes it?
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.likes = exports.likes2 = void 0;
 // You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
 // Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
 // []                                -->  "no one likes this"
@@ -11,7 +8,7 @@ exports.likes = exports.likes2 = void 0;
 // ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 // Note: For 4 or more names, the number in "and 2 others" simply increases.
 //Solution 1
-const likes2 = (a) => {
+export const likes2 = (a) => {
     if (a.length === 0) {
         return "no one likes this";
     }
@@ -30,9 +27,8 @@ const likes2 = (a) => {
         return twoNames + " and " + (a.length - 2) + " others like this";
     }
 };
-exports.likes2 = likes2;
 //Solution 2
-const likes = (a) => {
+export const likes = (a) => {
     switch (a.length) {
         case 0:
             return "no one likes this";
@@ -46,10 +42,9 @@ const likes = (a) => {
             return `${a[0]}, ${a[1]} and ${a.length - 2} others like this`;
     }
 };
-exports.likes = likes;
-console.log((0, exports.likes)([]));
-console.log((0, exports.likes)(["Peter"]));
-console.log((0, exports.likes)(["Jacob", "Alex"]));
-console.log((0, exports.likes)(["Max", "John", "Mark"]));
-console.log((0, exports.likes)(["Alex", "Jacob", "Mark", "Max"]));
-console.log((0, exports.likes)(["Alex", "Jacob", "Mark", "Max", "Link", "Mario", "Henrick"]));
+console.log(likes([]));
+console.log(likes(["Peter"]));
+console.log(likes(["Jacob", "Alex"]));
+console.log(likes(["Max", "John", "Mark"]));
+console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+console.log(likes(["Alex", "Jacob", "Mark", "Max", "Link", "Mario", "Henrick"]));
